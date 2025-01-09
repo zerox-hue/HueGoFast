@@ -111,7 +111,7 @@ namespace HueGoFast
                     count++;
                 }
 
-                if (count < config.MinPolicier)
+                if (count >= config.MinPolicier)
                 {
                     player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville en service !");
                 }
@@ -157,7 +157,7 @@ namespace HueGoFast
                     count++;
                 }
 
-                if (count < config.MinPolicier)
+                if (count >= config.MinPolicier)
                 {
                     player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
                 }
