@@ -20,13 +20,6 @@ namespace HueGoFast
 
         List<string> PlayerInGoFast = new List<string>();
 
-        public static string SuccessColors = "#85E085";
-        public static string ErrorColors = "#DD4B4E";
-        public static string WarningColors = "#FCBE86";
-        public static string InfoColors = "#4287F9";
-        public static string GreyColors = "#ADADAD";
-        public static string PurpleColors = "#DB70DB";
-
         public static Config config;
 
         public class Config
@@ -120,7 +113,7 @@ namespace HueGoFast
 
                 if (count < config.MinPolicier)
                 {
-                    player.SendText($"<color={ErrorColors}>[HueGofast]</color> Il n'y a pas assez de policiers en ville en service !");
+                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville en service !");
                 }
                 else
                 {
@@ -145,7 +138,7 @@ namespace HueGoFast
                     }
                     else
                     {
-                       player.SendText($"<color={ErrorColors}>Tu es déja dans un Gofast !");
+                       player.SendText($"<color=#bd2433>Tu es déja dans un Gofast !");
                     }
                 }
             }
@@ -166,7 +159,7 @@ namespace HueGoFast
 
                 if (count < config.MinPolicier)
                 {
-                    player.SendText($"<color={ErrorColors}>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
+                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
                 }
                 else
                 {
@@ -188,7 +181,7 @@ namespace HueGoFast
                     }
                     else
                     {
-                        player.SendText($"<color={ErrorColors}>Tu es déja dans un Gofast !");
+                        player.SendText($"<color=#bd2433>Tu es déja dans un Gofast !");
                     }
 
                 }
@@ -218,7 +211,7 @@ namespace HueGoFast
 
                     LifeVehicle lifevehicle = Nova.v.GetVehicle(player.setup.driver.vehicle.VehicleDbId);
 
-                    Nova.server.SendTextToServiceActivityType(Life.BizSystem.Activity.Type.LawEnforcement, $"<color={ErrorColors}>[HueGoFast]</color> Une voiture avec comme plaque : <color={PurpleColors}>{player.setup.driver.vehicle.Networkplate} </color>vient de comencer un Gofast et comme modéle : {VehiclesHelper.GetModelName(lifevehicle.modelId)} !");
+                    Nova.server.SendTextToServiceActivityType(Life.BizSystem.Activity.Type.LawEnforcement, $"<color=#bd2433>[HueGoFast]</color> Une voiture avec comme plaque : <color={PurpleColors}>{player.setup.driver.vehicle.Networkplate} </color>vient de comencer un Gofast et comme modéle : {VehiclesHelper.GetModelName(lifevehicle.modelId)} !");
 
                     await Task.Delay(1);
 
@@ -238,7 +231,7 @@ namespace HueGoFast
             }
             else
             {
-                player.SendText($"<color={ErrorColors}>[HueGofast]</color> Tu n'as pas {config.NombreDeCannabis.ToString()} feuilles de cannabis !");
+                player.SendText($"<color=#bd2433>[HueGofast]</color> Tu n'as pas {config.NombreDeCannabis.ToString()} feuilles de cannabis !");
             }
         }
 
@@ -263,7 +256,7 @@ namespace HueGoFast
 
                     LifeVehicle lifevehicle = Nova.v.GetVehicle(player.setup.driver.vehicle.VehicleDbId);
 
-                     Nova.server.SendTextToServiceActivityType(Life.BizSystem.Activity.Type.LawEnforcement, $"<color={ErrorColors}>[HueGoFast]</color> Une voiture avec comme plaque : <color={PurpleColors}>{player.setup.driver.vehicle.Networkplate} </color>vient de comencer un Gofast et comme modéle : {VehiclesHelper.GetModelName(lifevehicle.modelId)} !");
+                     Nova.server.SendTextToServiceActivityType(Life.BizSystem.Activity.Type.LawEnforcement, $"<color=#bd2433>[HueGoFast]</color> Une voiture avec comme plaque : <color={PurpleColors}>{player.setup.driver.vehicle.Networkplate} </color>vient de comencer un Gofast et comme modéle : {VehiclesHelper.GetModelName(lifevehicle.modelId)} !");
 
                     await Task.Delay(1);
 
@@ -281,7 +274,7 @@ namespace HueGoFast
             }
             else
             {
-                player.SendText($"<color={ErrorColors}>[HueGofast]</color> Tu n'as pas {config.NombreDeCannabis} feuilles de cannabis !");
+                player.SendText($"<color=#bd2433>[HueGofast]</color> Tu n'as pas {config.NombreDeCannabis} feuilles de cannabis !");
             }
         }
 
@@ -383,7 +376,7 @@ namespace HueGoFast
             {
                 player.DestroyAllVehicleCheckpoint();
 
-                player.setup.TargetShowCenterText($"<color={ErrorColors}>GO FAST</color>", "Tu as réussi le GoFast sans te faire attraper !", 5f);
+                player.setup.TargetShowCenterText($"<color=#bd2433>GO FAST</color>", "Tu as réussi le GoFast sans te faire attraper !", 5f);
 
                 player.setup.NetworkisFreezed = true;
 
@@ -395,7 +388,7 @@ namespace HueGoFast
 
                 player.AddMoney(config.Reward, "Gofast"); 
 
-                player.SendText($"<color={SuccessColors}>GoFast Réussi avec succés tu as empoché {config.Reward} € !");
+                player.SendText($"<color=#24bd24>GoFast Réussi avec succés tu as empoché {config.Reward} € !");
 
                 player.setup.TargetDisableNavigation();
 
@@ -419,7 +412,7 @@ namespace HueGoFast
             {
                 player.DestroyAllVehicleCheckpoint();
 
-                player.setup.TargetShowCenterText($"<color={ErrorColors}>GO FAST</color>", "Tu as réussi le GoFast sans te faire attraper !", 5f);
+                player.setup.TargetShowCenterText($"<color=#bd2433>GO FAST</color>", "Tu as réussi le GoFast sans te faire attraper !", 5f);
 
                 player.setup.NetworkisFreezed = true;
 
@@ -429,7 +422,7 @@ namespace HueGoFast
 
                 player.setup.NetworkisFreezed = false;
 
-                player.SendText($"<color={SuccessColors}>GoFast Réussi avec succés tu as empoché {config.Reward} € !");
+                player.SendText($"<color=#24bd24>GoFast Réussi avec succés tu as empoché {config.Reward} € !");
 
                 PlayerInGoFast.Remove(player.GetFullName());
 
