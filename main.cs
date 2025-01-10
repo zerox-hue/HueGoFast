@@ -113,11 +113,7 @@ namespace HueGoFast
 
                 if (count >= config.MinPolicier)
                 {
-                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville en service !");
-                }
-                else
-                {
-                    if (!PlayerInGoFast.Contains(player.GetFullName()))
+                                        if (!PlayerInGoFast.Contains(player.GetFullName()))
                     {
                         UIPanel panel = new UIPanel("Gofast - By Zerox_Hue", UIPanel.PanelType.TabPrice);
 
@@ -141,6 +137,10 @@ namespace HueGoFast
                        player.SendText($"<color=#bd2433>Tu es déja dans un Gofast !");
                     }
                 }
+                else
+                {
+                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
+                }
             }
 
 
@@ -158,10 +158,6 @@ namespace HueGoFast
                 }
 
                 if (count >= config.MinPolicier)
-                {
-                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
-                }
-                else
                 {
                     if (!PlayerInGoFast.Contains(player.GetFullName()))
                     {
@@ -183,7 +179,9 @@ namespace HueGoFast
                     {
                         player.SendText($"<color=#bd2433>Tu es déja dans un Gofast !");
                     }
-
+                else
+                {
+                    player.SendText($"<color=#bd2433>[HueGofast]</color> Il n'y a pas assez de policiers en ville !");
                 }
             }
 
